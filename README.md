@@ -1,4 +1,4 @@
-# Danéls Attempt at Advent of Code
+# Attempt at Advent of Code
 
 This repository contains my attempts at [Advent of Code](https://adventofcode.com/).
 
