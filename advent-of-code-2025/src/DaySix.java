@@ -11,11 +11,12 @@ public class DaySix {
     }
 
     public static void partOne() {
-        long count = 0;
+        System.out.println("DAY SIX - PART ONE \n");
+
+        File myObj = new File("inputs/daySix/input.txt");
         ArrayList<String[]> input = new ArrayList<>();
 
-        System.out.println("DAY SIX - PART ONE \n");
-        File myObj = new File("inputs/daySix/input.txt");
+        long count = 0;
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {
@@ -49,11 +50,12 @@ public class DaySix {
     }
 
     public static void partTwo() {
-        long count = 0;
+        System.out.println("DAY SIX - PART TWO \n");
+
+        File myObj = new File("inputs/daySix/input.txt");
         ArrayList<char[]> input = new ArrayList<>();
 
-        System.out.println("DAY SIX - PART TWO \n");
-        File myObj = new File("inputs/daySix/input.txt");
+        long count = 0;
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {

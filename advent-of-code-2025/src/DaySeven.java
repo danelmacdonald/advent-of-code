@@ -13,9 +13,8 @@ public class DaySeven {
 
     public static void partOne() {
         System.out.println("DAY SEVEN - PART ONE \n");
-        File myObj = new File("inputs/daySeven/input.txt");
 
-        long count = 0;
+        File myObj = new File("inputs/daySeven/input.txt");
         ArrayList<char[]> input = new ArrayList<>();
 
         try (Scanner myReader = new Scanner(myObj)) {
@@ -24,50 +23,35 @@ public class DaySeven {
                 input.add(data.toCharArray());
             }
 
-            printGrid(input);
+            int count = 0;
+            ArrayList<BigInteger> counts = new ArrayList<>(Collections.nCopies(input.get(0).length, BigInteger.ZERO));
 
-            for (int row = 0; row < input.size(); row++) {
-                for (int col = 0; col < input.get(row).length; col++) {
-                    switch (input.get(row)[col]) {
+            for (char[] chars : input) {
+                for (int col = 0; col < chars.length; col++) {
+                    switch (chars[col]) {
                         case 'S': {
-                            if (row < (input.size() - 1) && input.get(row + 1)[col] == '.') {
-                                input.get(row + 1)[col] = '|';
-                            }
-
+                            counts.set(col, counts.get(col).add(BigInteger.ONE));
                             continue;
                         }
                         case '^': {
-                            if (row > 0 && input.get(row - 1)[col] == '|') {
+                            if(counts.get(col).equals(BigInteger.ONE)) {
+                                if (col > 0) {
+                                    counts.set(col - 1, BigInteger.ONE);
+                                }
+
+                                if (col < (chars.length - 1)) {
+                                    counts.set(col + 1, BigInteger.ONE);
+                                }
+
+                                counts.set(col, BigInteger.ZERO);
                                 count++;
-
-                                if (col < (input.get(row).length - 1) && input.get(row)[col + 1] == '.') {
-                                    input.get(row)[col + 1] = '|';
-                                }
-
-                                if (col > 0 && input.get(row)[col - 1] == '.') {
-                                    input.get(row)[col - 1] = '|';
-
-                                    if (row < (input.size() - 1) && input.get(row + 1)[col - 1] == '.') {
-                                        input.get(row + 1)[col - 1] = '|';
-                                    }
-                                }
-                            }
-
-                            continue;
-                        }
-                        case '|': {
-                            if (row < (input.size() - 1) && input.get(row + 1)[col] == '.') {
-                                input.get(row + 1)[col] = '|';
                             }
                         }
                     }
                 }
 
-                System.out.println("Iteration: " + row + "\n");
-                printGrid(input);
-                System.out.println();
+                System.out.println(counts);
             }
-
 
             System.out.println("Result: " + count + "\n");
         } catch (FileNotFoundException e) {
@@ -77,9 +61,8 @@ public class DaySeven {
 
     public static void partTwo() {
         System.out.println("DAY SEVEN - PART TWO \n");
-        File myObj = new File("inputs/daySeven/input.txt");
 
-        BigInteger count = BigInteger.ZERO;
+        File myObj = new File("inputs/daySeven/input.txt");
         ArrayList<char[]> input = new ArrayList<>();
 
         try (Scanner myReader = new Scanner(myObj)) {
@@ -88,8 +71,7 @@ public class DaySeven {
                 input.add(data.toCharArray());
             }
 
-            printGrid(input);
-
+            BigInteger count = BigInteger.ZERO;
             ArrayList<BigInteger> counts = new ArrayList<>(Collections.nCopies(input.get(0).length, BigInteger.ZERO));
 
             for (char[] chars : input) {
@@ -123,15 +105,6 @@ public class DaySeven {
             System.out.println("Result: " + count + "\n");
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
-        }
-    }
-
-    public static void printGrid(ArrayList<char[]> grid) {
-        for (char[] row : grid) {
-            for (char col : row) {
-                System.out.print(col);
-            }
-            System.out.println();
         }
     }
 }

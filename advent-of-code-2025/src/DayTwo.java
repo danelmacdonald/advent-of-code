@@ -10,11 +10,12 @@ public class DayTwo {
     }
 
     public static void partOne() {
+        System.out.println("DAY TWO - PART ONE \n");
+
+        File myObj = new File("inputs/dayTwo/input.txt");
+
         BigInteger count = BigInteger.ZERO;
         int duplicantCount = 0;
-
-        System.out.println("DAY TWO - PART ONE \n");
-        File myObj = new File("inputs/dayTwo/input.txt");
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {
@@ -60,11 +61,12 @@ public class DayTwo {
     }
 
     public static void partTwo() {
+        System.out.println("DAY TWO - PART TWO \n");
+
+        File myObj = new File("inputs/dayTwo/input.txt");
+
         BigInteger count = BigInteger.ZERO;
         int duplicantCount = 0;
-
-        System.out.println("DAY TWO - PART TWO \n");
-        File myObj = new File("inputs/dayTwo/input.txt");
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {

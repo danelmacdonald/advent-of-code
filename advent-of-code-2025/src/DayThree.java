@@ -12,10 +12,11 @@ public class DayThree {
     }
 
     public static void partOne() {
-        BigInteger output = BigInteger.ZERO;
-
         System.out.println("DAY THREE - PART ONE \n");
+
         File myObj = new File("inputs/dayThree/input.txt");
+
+        BigInteger output = BigInteger.ZERO;
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {
@@ -56,11 +57,12 @@ public class DayThree {
     }
 
     public static void partTwo() {
+        System.out.println("DAY THREE - PART TWO \n");
+
+        File myObj = new File("inputs/dayThree/input.txt");
+
         BigInteger output = BigInteger.ZERO;
         int bank = 1;
-
-        System.out.println("DAY THREE - PART TWO \n");
-        File myObj = new File("inputs/dayThree/input.txt");
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {

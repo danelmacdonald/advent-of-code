@@ -9,11 +9,12 @@ public class DayOne {
     }
 
     public static void partOne() {
+        System.out.println("DAY ONE - PART ONE");
+
+        File myObj = new File("inputs/dayOne/input.txt");
+
         int current = 50;
         int count = 0;
-
-        System.out.println("DAY ONE - PART ONE");
-        File myObj = new File("inputs/dayOne/input.txt");
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {
@@ -50,11 +51,12 @@ public class DayOne {
     }
 
     public static void partTwo() {
+        System.out.println("DAY ONE - PART TWO");
+
+        File myObj = new File("inputs/dayOne/input.txt");
+
         int current = 50;
         int count = 0;
-
-        System.out.println("DAY ONE - PART TWO");
-        File myObj = new File("inputs/dayOne/input.txt");
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {

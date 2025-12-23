@@ -10,11 +10,12 @@ public class DayFour {
     }
 
     public static void partOne() {
-        int count = 0;
+        System.out.println("DAY FOUR - PART ONE \n");
+
+        File myObj = new File("inputs/dayFour/input.txt");
         ArrayList<char[]> grid = new ArrayList<>();
 
-        System.out.println("DAY FOUR - PART ONE \n");
-        File myObj = new File("inputs/dayFour/input.txt");
+        int count = 0;
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {
@@ -31,11 +32,12 @@ public class DayFour {
     }
 
     public static void partTwo() {
-        int count = 0;
+        System.out.println("DAY FOUR - PART TWO \n");
+
+        File myObj = new File("inputs/dayFour/input.txt");
         ArrayList<char[]> grid = new ArrayList<>();
 
-        System.out.println("DAY FOUR - PART TWO \n");
-        File myObj = new File("inputs/dayFour/input.txt");
+        int count = 0;
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {

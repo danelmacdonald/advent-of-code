@@ -11,11 +11,12 @@ public class DayFive {
     }
 
     public static void partOne() {
-        int count = 0;
+        System.out.println("DAY FIVE - PART ONE \n");
+
+        File myObj = new File("inputs/dayFive/input.txt");
         ArrayList<String> ranges = new ArrayList<>();
 
-        System.out.println("DAY FIVE - PART ONE \n");
-        File myObj = new File("inputs/dayFive/input.txt");
+        int count = 0;
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {
@@ -52,10 +53,10 @@ public class DayFive {
     }
 
     public static void partTwo() {
-        Map<Long, Long> ranges = new java.util.HashMap<>(Map.of());
-
         System.out.println("DAY FIVE - PART TWO \n");
+
         File myObj = new File("inputs/dayFive/input.txt");
+        Map<Long, Long> ranges = new java.util.HashMap<>(Map.of());
 
         try (Scanner myReader = new Scanner(myObj)) {
             while (myReader.hasNextLine()) {
